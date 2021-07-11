@@ -87,3 +87,12 @@ $ZSH_CUSTOM/aliases/git.zsh
 Lots of them found [here](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins)
 
 Problem is you have to memorize all the shortcuts.
+
+
+## other settings
+
+Preferred Slack color theme
+
+```
+#2B303B,#16181F,#4F5B66,#C0C5CE,#343D46,#A7ADBA,#A3BE8C,#BF616A
+```
