@@ -114,4 +114,9 @@ cl() {
   cd "$cloned"
 }
 
+# Enables zsh completion for gcloud.
+source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+# Updates PATH for the Google Cloud SDK.
+source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
