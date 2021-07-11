@@ -102,7 +102,16 @@ fi
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-# 
+#
 # ---> PUT ALIASES in aliases.zsh <---
+
+# need to figure out how to seperate these functions from this file.
+# consider getting this book.
+# https://scriptingosx.com/2019/07/moving-to-zsh-part-4-aliases-and-functions/
+
+cl() {
+  cloned=$(command cl -dir "$GOPATH/src" "$1")
+  cd "$cloned"
+}
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
