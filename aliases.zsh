@@ -7,6 +7,8 @@ alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias c="clear"
 alias gt="gittower ."
 alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
+alias python='python3'
+alias pip='pip3'
 
 # Directories
 alias dotfiles="cd $DOTFILES"
