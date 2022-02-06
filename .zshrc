@@ -75,7 +75,10 @@ ZSH_CUSTOM=$DOTFILES
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    z
+  z
+	gh
+	docker
+	docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -110,7 +113,7 @@ fi
 # https://scriptingosx.com/2019/07/moving-to-zsh-part-4-aliases-and-functions/
 
 cl() {
-  cloned=$(command cl -dir "$GOPATH/src" "$1")
+  cloned=$(command cl -dir "$HOME/src" "$1")
   cd "$cloned"
 }
 
@@ -120,3 +123,4 @@ source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completio
 source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+export PATH="/opt/homebrew/bin:$PATH"
