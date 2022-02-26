@@ -75,10 +75,7 @@ ZSH_CUSTOM=$DOTFILES
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  z
-	gh
-	docker
-	docker-compose
+    z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -86,6 +83,11 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
+export ZSHZ_UNCOMMON=1
+export DOCKER_DEFAULT_PLATFORM=linux/arm64
+
+export GOOSE_DRIVER=postgres
+export GOOSE_DBSTRING=postgresql://postgres:password1@localhost/testdb?sslmode=disable
 
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
@@ -100,6 +102,7 @@ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+export MAKEFLAGS="-j8"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -117,10 +120,32 @@ cl() {
   cd "$cloned"
 }
 
+to_snake() {
+  echo $1 | sed 's/[[:upper:]]/_&/g;s/^_//' | tr '[:upper:]' '[:lower:]'
+}
+
+docker_cleanup() {
+  docker image prune -a -f
+  docker system prune -f --volumes
+}
+
+docker_rm_all() {
+  docker rm -f $(docker ps -aq)
+}
+
+ulimit -n 524288
+
+eval "$(direnv hook bash)"
+
 # Enables zsh completion for gcloud.
 source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 # Updates PATH for the Google Cloud SDK.
 source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+eval "$(direnv hook zsh)"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform

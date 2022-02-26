@@ -2,7 +2,6 @@
 alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
 alias reloadshell="source $HOME/.zshrc"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-alias tf="terraform"
 # alias ll="/usr/local/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-directories-first"
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias c="clear"
@@ -10,6 +9,10 @@ alias gt="gittower ."
 alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
 alias python='python3'
 alias pip='pip3'
+alias typora="open -a typora"
+alias ktx="kubectx"
+alias k="kubectl"
+alias h='history|grep'
 
 # Directories
 alias dotfiles="cd $DOTFILES"
