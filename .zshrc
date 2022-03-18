@@ -85,7 +85,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+eval "$(direnv hook zsh)"
 
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
@@ -124,3 +124,4 @@ source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
