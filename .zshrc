@@ -85,8 +85,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-eval "$(direnv hook zsh)"
-
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -121,7 +119,9 @@ cl() {
 source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 # Updates PATH for the Google Cloud SDK.
 source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
-
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+eval "$(direnv hook zsh)"
