@@ -120,6 +120,10 @@ cl() {
   cd "$cloned"
 }
 
+docker-prune() {
+  docker system prune -f --volumes && docker image prune -a -f
+}
+
 # Enables zsh completion for gcloud.
 source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 # Updates PATH for the Google Cloud SDK.
