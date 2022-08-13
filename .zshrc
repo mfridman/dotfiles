@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 # Path to your dotfiles.
 export DOTFILES=$HOME/.dotfiles
 
@@ -76,9 +78,9 @@ ZSH_CUSTOM=$DOTFILES
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   z
-	gh
-	docker
-	docker-compose
+  gh
+  docker
+  docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -110,6 +112,7 @@ fi
 # consider getting this book.
 # https://scriptingosx.com/2019/07/moving-to-zsh-part-4-aliases-and-functions/
 
+# https://github.com/felixge/cl
 cl() {
   cloned=$(command cl -dir "$HOME/src" "$1")
   cd "$cloned"
@@ -125,3 +128,6 @@ export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 eval "$(direnv hook zsh)"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
