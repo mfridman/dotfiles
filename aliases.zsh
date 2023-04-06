@@ -7,6 +7,7 @@ alias tf="terraform"
 # alias ll="/usr/local/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-directories-first"
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias c="clear"
+alias e="exit"
 alias gt="gittower ."
 alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
 alias python='python3'
