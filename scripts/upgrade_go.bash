@@ -7,6 +7,7 @@ set -euo pipefail
 # latest version. It Go is installed in /usr/local/go.
 
 # Ask for the administrator password upfront.
+echo "Password required to install to /usr/local/go ..."
 sudo -v
 
 # Check if the version argument is set, otherwise use the latest version.

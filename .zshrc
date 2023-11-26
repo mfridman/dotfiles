@@ -120,6 +120,10 @@ cl() {
   cd "$cloned"
 }
 
+fn_upgrade_go() {
+  $HOME/.dotfiles/scripts/upgrade_go.bash
+}
+
 docker-prune() {
   docker system prune -f --volumes && docker image prune -a -f
 }
