@@ -121,7 +121,7 @@ cl() {
 }
 
 fn_upgrade_go() {
-  $HOME/.dotfiles/scripts/upgrade_go.bash
+  $HOME/.dotfiles/scripts/upgrade_go.bash "$@"
 }
 
 docker-prune() {
