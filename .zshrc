@@ -58,9 +58,14 @@ path=(
   /opt/homebrew/bin
   /opt/homebrew/opt/libpq/bin
   /opt/homebrew/opt/node@20/bin
+  ~/.local/bin
   $path
 )
 export PATH
 
 # Load direnv
 eval "$(direnv hook zsh)"
+export PATH="$(brew --prefix)/opt/curl/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/opt/homebrew/lib/ruby/gems/3.4.0/bin:$PATH"
